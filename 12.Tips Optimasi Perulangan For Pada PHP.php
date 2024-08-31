@@ -12,26 +12,54 @@ $bulan = array('1'=>'Januari',
 			'November', 
 			'Desember'
 		);
-$batas_waktu = '2015-11-10';
+
+// Informai yang diperoleh dari database
+$tahapan = array(
+array('tahap' => 'Perencanaan',	'tgl' => '2015-01-31'),
+array('tahap' => 'Analisis',	'tgl' => '2015-02-28'),
+array('tahap' => 'Perancangan',	'tgl' => '2015-03-31'),
+array('tahap' => 'Penerapan',	'tgl' => '2015-04-30'),
+array('tahap' => 'Evaluasi',	'tgl' => '2015-05-31'),
+array('tahap' => 'Penggunaan',	'tgl' => '2015-06-30')
+			);
+
+foreach ($tahapan as $key => $tahap)
+{
+	$bln_batas = date("n",strtotime($tahap['tgl']));
+	$ref_tahapan[$bln_batas] = $key;
+}
 echo '<table>
 		<tr>
-			<th>Bulan</th>
-			<th>Keterangan</th>
-		</tr>';
-for ($i = 1; $i <= count($bulan); $i++)
+			<th rowspan="2">Bulan</th>
+			<th colspan="2">Deadline</th>
+		</tr>
+		<tr>
+			<th>Tahapan</th>
+			<th>Tanggal</th>
+		</tr>
+	
+		';
+
+$jml_bln = count($bulan);
+for ($i = 1; $i <= $jml_bln; $i++)
 {	
-	$bln_batas = date("m",strtotime($batas_waktu));
 	echo '<tr>
 			<td> ' . strtoupper($bulan[$i]) . ' </td>';
 		
-	if ($bln_batas == $i)
-		echo '<td>Batas waktu penulisan</td>';
-	else
-		echo '<td>-</td>';
-		
+			if (key_exists($i, $ref_tahapan))
+			{
+echo '<td>'.$tahapan[$ref_tahapan[$i]]['tahap'].'</td>
+	  <td>'.$tahapan[$ref_tahapan[$i]]['tgl'].'</td>';
+			} 
+			else
+			{
+echo '<td>-</td>
+	 <td>-</td>';
+			}
+			
 	echo '</tr>';
 }
-
 echo '</table>';
+echo "<i><p><strong> By : dewi puspita sari";
 
-echo "<br><br><strong> by:dewi puspita sari";
+?>
