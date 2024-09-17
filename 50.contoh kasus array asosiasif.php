@@ -39,31 +39,31 @@
 $customer = [
     [
         "No" => 1,
-        "name" => "amellya",
+        "name" => "dewi puspita sari",
         "Alamat" => "Bundar",
-        "No. Telp" => "085254165107",
-        "Pekerjaan" => "guru",
-        "Gaji" => "5.000.000",
+        "No. Telp" => "081285331709",
+        "Pekerjaan" => "dokter",
+        "Gaji" => "6.000.000",
 
     ],
    
     [
         "No" => 2,
-        "name" => "zara",
+        "name" => "naza",
         "Alamat" => "Kampung selamat",
-        "No. Telp" => "082245349098",
-        "Pekerjaan" => " manager",
-        "Gaji" => "7.000.000",
+        "No. Telp" => "082340442122",
+        "Pekerjaan" => " polwan",
+        "Gaji" => "9.000.000",
 
     ],
 
     [
         "No" => 3,
-        "name" => "ayya",
+        "name" => "alya",
         "Alamat" => "kuala simpang",
-        "No. Telp" => "082311678076",
+        "No. Telp" => "082280442211",
         "Pekerjaan" => "Wirasswasta",
-        "Gaji" => "15.000.000",
+        "Gaji" => "10.000.000",
 
     ],
 
@@ -91,7 +91,7 @@ foreach ($customer as $customer) {
 
 echo "</table>";
 
-echo "<p><strong>Bydewi puspita sariontoh kasus array </strong>";
+echo "<p><strong>By dewi puspita sari</strong>";
 
 ?>
 </body>
